@@ -14,3 +14,35 @@ def sum(num_arr)
   end
   total
 end
+
+def multiply(*args)
+  product = 1
+  args.each do |arg|
+    product *= arg.to_i
+  end
+  product
+end
+
+def power(x, y)
+  case x
+  when 0 then 0
+  else
+    case y
+    when 0 then 1
+    else
+      pow = 1
+      y.times { pow *= x }
+      pow
+    end
+  end
+end
+
+def factorial(n)
+  case n
+  when 0 then 1
+  else
+    fac = 1
+    n.to_i.downto(1) { |num| fac *= num }
+    fac
+  end
+end
