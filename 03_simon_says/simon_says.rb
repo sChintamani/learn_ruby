@@ -21,10 +21,15 @@ def first_word(inp)
 end
 
 def titleize(inp)
+  little_words = ["and", "the", "over"]
   inp_arr = inp.split(" ")
   out_arr = []
   inp_arr.each_with_index do |word, index|
-    out_arr << word[0].upcase + word[1..word.length]
+    if little_words.include?(word) && index != 0
+      out_arr << word
+    else
+      out_arr << word[0].upcase + word[1..word.length]
+    end
   end
   out_arr.join(" ")
 end
