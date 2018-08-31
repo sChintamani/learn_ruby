@@ -19,3 +19,12 @@ end
 def first_word(inp)
   inp.split(" ")[0]
 end
+
+def titleize(inp)
+  inp_arr = inp.split(" ")
+  out_arr = []
+  inp_arr.each_with_index do |word, index|
+    out_arr << word[0].upcase + word[1..word.length]
+  end
+  out_arr.join(" ")
+end
